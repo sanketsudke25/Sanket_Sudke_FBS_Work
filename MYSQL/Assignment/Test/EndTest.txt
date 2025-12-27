@@ -1,0 +1,83 @@
+Q1 write an SQL query to retrieve all employees' names and salaries from a table named
+`Employees`, ordered by salary in descending order.
+
+select name, salary
+from employees
+order by salary desc;
+
+Q2 retrieve the top 5 highest- paid employees from "employees table"
+
+
+  select name , salary from emp
+   order by salary desc limit 5;
+
+
+Q3 fetch employee records from the employees table , skipping the first 3 records and showing the next 5 records
+
+   select * from emp limit 5 offset 3;
+
+
+Q4 write a query to count the num of employee in each dept from employees table
+   
+     select dept_id, count(*) as total_emp from emp
+     group by dept_id;
+  
+Q5
+ select dept_id avg(salary) as avg_salary from employee 
+ group by dept_id
+ having avg(salary) > 50000;
+
+Q6
+select * from product where product_name like  "laptop";
+
+
+Q7
+
+
+Q8
+
+
+
+Q9
+
+select month(order_date) as order_month, count(*) as total_orders 
+from orders 
+group by month(order_date) 
+having count(*) > 100;
+
+
+
+Q10
+
+   select category, sum(sales_amount) as total_sales, avg(sales_amount) as avg_sales 
+   from sales 
+   group by category 
+   having sum(sales_amount) > 100000;
+
+Q11 
+
+   a) The total number of employees
+
+Q12
+     b) 8
+
+Q13
+     c) HAVING
+
+
+Q14
+     b) Returns all rows from the left table and matching rows from the right table 
+
+
+Q15
+
+  b) HELLO WORLD
+
+
+Q17
+   select b.author_id, sum(s.quantity) as total_books_sold 
+   from books b 
+   join sales s on b.book_id = s.book_id 
+   group by b.author_id 
+   having sum(s.quantity) > 100;
+
